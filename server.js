@@ -72,6 +72,11 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', timestamp: new Date().toISOString() })
 })
 
+// Root endpoint for Heroku and general health
+app.get('/', (req, res) => {
+  res.send('API is running');
+})
+
 // Error handling middleware
 app.use((error, req, res, next) => {
   console.error('Error:', error)
